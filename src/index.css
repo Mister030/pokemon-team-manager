@@ -1,0 +1,197 @@
+/* Algemeen */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+a {
+  color: #3b4cca;
+}
+
+/* Header */
+.header {
+  background: #e3350d;
+  padding: 16px;
+}
+
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Navigatie */
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 12px 16px;
+  background: #222;
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  background: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+/* Knoppen */
+button,
+.knop {
+  display: inline-block;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #3b4cca;
+  color: white;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover,
+.knop:hover {
+  background: #2a3699;
+}
+
+button:disabled,
+select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.verwijder {
+  background: #c0392b;
+}
+
+.verwijder:hover {
+  background: #962d22;
+}
+
+/* Formulieren */
+input,
+select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* Kaarten (PokemonCard) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.card img {
+  width: 96px;
+  height: 96px;
+}
+
+.card h3 {
+  margin: 0;
+  text-transform: capitalize;
+}
+
+/* Detailpagina */
+.detail h1 {
+  text-transform: capitalize;
+}
+
+.detail img {
+  width: 200px;
+  height: 200px;
+  image-rendering: pixelated;
+}
+
+/* Teams */
+.team {
+  margin-bottom: 16px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.team-naam {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.team-leden {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.team-leden li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  background: #f4f4f4;
+  border-radius: 6px;
+  text-transform: capitalize;
+}
+
+.team-acties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
