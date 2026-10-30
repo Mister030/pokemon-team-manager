@@ -2,13 +2,10 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 function Detail({ favorieten, onToggleFavoriet }) {
-  // Het id uit de url, bijvoorbeeld /detail/25 → "25"
   const { id } = useParams()
 
   const [pokemon, setPokemon] = useState(null)
   const [fout, setFout] = useState(false)
-
-  // Detaildata ophalen. [id] = opnieuw ophalen als het id verandert.
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
       .then((response) => response.json())

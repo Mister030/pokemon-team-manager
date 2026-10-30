@@ -1,20 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-
-// Businessregel: een team mag maximaal 6 Pokémon hebben
 const MAX_POKEMON = 6
 
 function Teams({ favorieten }) {
-  // Teams uit localStorage halen (of een lege lijst)
   const [teams, setTeams] = useState(JSON.parse(localStorage.getItem('teams')) ?? [])
   const [nieuweNaam, setNieuweNaam] = useState('')
-
-  // Elke keer als de teams veranderen: opslaan in localStorage
   useEffect(() => {
     localStorage.setItem('teams', JSON.stringify(teams))
   }, [teams])
-
-  // CREATE: nieuw team maken
   function maakTeam(event) {
     event.preventDefault()
     if (nieuweNaam.trim() === '') return
@@ -23,18 +16,12 @@ function Teams({ favorieten }) {
     setTeams([...teams, nieuwTeam])
     setNieuweNaam('')
   }
-
-  // UPDATE: team hernoemen
   function hernoemTeam(teamId, naam) {
     setTeams(teams.map((team) => (team.id === teamId ? { ...team, naam: naam } : team)))
   }
-
-  // DELETE: team verwijderen
   function verwijderTeam(teamId) {
     setTeams(teams.filter((team) => team.id !== teamId))
   }
-
-  // UPDATE: Pokémon aan een team toevoegen
   function voegPokemonToe(teamId, pokemonId) {
     const team = teams.find((t) => t.id === teamId)
     const pokemon = favorieten.find((f) => f.id === Number(pokemonId))
@@ -53,8 +40,6 @@ function Teams({ favorieten }) {
       teams.map((t) => (t.id === teamId ? { ...t, pokemon: [...t.pokemon, pokemon] } : t)),
     )
   }
-
-  // UPDATE: Pokémon uit een team halen
   function verwijderPokemon(teamId, pokemonId) {
     setTeams(
       teams.map((t) =>

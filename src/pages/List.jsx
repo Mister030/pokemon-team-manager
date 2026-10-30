@@ -3,8 +3,6 @@ import PokemonCard from '../components/PokemonCard.jsx'
 
 const API_URL = 'https://pokeapi.co/api/v2'
 const PLAATJE_URL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon'
-
-// Types die voorkomen bij de eerste 151 Pokémon
 const TYPES = [
   'normal', 'fire', 'water', 'grass', 'electric', 'ice', 'fighting', 'poison', 'ground',
   'flying', 'psychic', 'bug', 'rock', 'ghost', 'dragon', 'steel', 'fairy',
@@ -19,15 +17,11 @@ function List({ favorieten, onToggleFavoriet }) {
   const [type, setType] = useState('')
   const [namenVanType, setNamenVanType] = useState([])
   const [sortering, setSortering] = useState('nummer')
-
-  // Eén keer de lijst ophalen als de pagina laadt ([] = geen dependencies)
   useEffect(() => {
     fetch(`${API_URL}/pokemon?limit=151`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data)
-
-        // De API geeft alleen naam + url. Het nummer is de plek in de lijst + 1.
         const lijst = data.results.map((pokemon, index) => ({
           id: index + 1,
           name: pokemon.name,
@@ -42,8 +36,6 @@ function List({ favorieten, onToggleFavoriet }) {
         setLaden(false)
       })
   }, [])
-
-  // Filter op type: de API geeft per type een lijst met Pokémon-namen
   function kiesType(nieuwType) {
     setType(nieuwType)
     setNamenVanType([])
@@ -56,16 +48,10 @@ function List({ favorieten, onToggleFavoriet }) {
         setNamenVanType(data.pokemon.map((p) => p.pokemon.name))
       })
   }
-
-  // 1. Zoeken op naam
   let zichtbaar = pokemons.filter((p) => p.name.includes(zoekterm.toLowerCase()))
-
-  // 2. Filteren op type
   if (type !== '') {
     zichtbaar = zichtbaar.filter((p) => namenVanType.includes(p.name))
   }
-
-  // 3. Sorteren op naam (filter maakt al een nieuwe array, dus sort mag hier)
   if (sortering === 'az') {
     zichtbaar.sort((a, b) => a.name.localeCompare(b.name))
   } else if (sortering === 'za') {

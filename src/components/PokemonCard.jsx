@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom'
-
-// Herbruikbaar component: toont één Pokémon met de props die het krijgt
 function PokemonCard({ id, name, image, isFavoriet, onToggleFavoriet }) {
   return (
     <div className="card">

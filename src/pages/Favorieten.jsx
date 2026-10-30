@@ -4,8 +4,6 @@ import PokemonCard from '../components/PokemonCard.jsx'
 
 function Favorieten({ favorieten, onToggleFavoriet }) {
   const [zoekterm, setZoekterm] = useState('')
-
-  // Zoeken op naam in je favorieten, zo vind je snel een Pokémon voor je team
   const zichtbaar = favorieten.filter((p) => p.name.includes(zoekterm.toLowerCase()))
 
   return (

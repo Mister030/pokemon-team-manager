@@ -60,3 +60,7 @@ src/
 - **`useEffect`**: code die na het tekenen draait, bijvoorbeeld data ophalen. De lijst `[]` achteraan bepaalt wanneer het opnieuw draait.
 - **`useParams`**: leest een stukje uit de url, zoals het `:id` in `/detail/:id`.
 - **Nooit state direct aanpassen**: altijd een nieuwe array maken, met `[...lijst, nieuw]`, `.filter()` of `.map()`.
+
+## Wireframes
+
+Zie [wireframes/](wireframes/README.md) voor vijf schermen als SVG en [PDF](wireframes/wireframes.pdf), met navigatie en revisietoelichting.

@@ -10,16 +10,10 @@ import Favorieten from './pages/Favorieten.jsx'
 import Teams from './pages/Teams.jsx'
 
 function App() {
-  // Favorieten staan in App, omdat meerdere pagina's ze nodig hebben.
-  // Bij het starten lezen we de opgeslagen favorieten uit localStorage (anders een lege lijst).
   const [favorieten, setFavorieten] = useState(JSON.parse(localStorage.getItem('favorieten')) ?? [])
-
-  // Elke keer als de favorieten veranderen: opslaan in localStorage
   useEffect(() => {
     localStorage.setItem('favorieten', JSON.stringify(favorieten))
   }, [favorieten])
-
-  // Favoriet toevoegen, of verwijderen als hij er al in staat
   function toggleFavoriet(pokemon) {
     const isAlFavoriet = favorieten.some((f) => f.id === pokemon.id)
 

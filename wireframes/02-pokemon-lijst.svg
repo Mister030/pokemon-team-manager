@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="780" viewBox="0 0 1100 780">
+<rect width="1100" height="780" fill="white"/>
+<text x="30" y="30" font-family="Arial, sans-serif" font-size="18" fill="#222">02 Pokémon lijst | /list</text>
+<rect x="30" y="48" width="1040" height="60" fill="#dddddd" stroke="#888"/>
+<text x="42" y="70" font-family="Arial, sans-serif" font-size="14" fill="#222">Pokémon Team Manager [Header]</text>
+<rect x="30" y="108" width="1040" height="44" fill="#eeeeee" stroke="#888"/>
+<text x="42" y="130" font-family="Arial, sans-serif" font-size="14" fill="#222">Home     Pokémon lijst     Detail     Favorieten     Teams [Navigation]</text>
+<rect x="30" y="690" width="1040" height="42" fill="#eeeeee" stroke="#888"/>
+<text x="42" y="712" font-family="Arial, sans-serif" font-size="14" fill="#222">Pokémon Team Manager - Data van de PokéAPI [Footer]</text>
+<text x="30" y="760" font-family="Arial, sans-serif" font-size="11" fill="#222">Low-fidelity revisie op basis van huidige applicatie - 30 oktober 2026</text>
+<text x="65" y="195" font-family="Arial, sans-serif" font-size="24" fill="#222">Pokémon lijst</text>
+<rect x="65" y="220" width="270" height="40" fill="#ffffff" stroke="#888"/>
+<text x="77" y="242" font-family="Arial, sans-serif" font-size="14" fill="#222">Zoek op naam</text>
+<rect x="350" y="220" width="210" height="40" fill="#ffffff" stroke="#888"/>
+<text x="362" y="242" font-family="Arial, sans-serif" font-size="14" fill="#222">Alle types [select]</text>
+<rect x="575" y="220" width="250" height="40" fill="#ffffff" stroke="#888"/>
+<text x="587" y="242" font-family="Arial, sans-serif" font-size="14" fill="#222">Sorteer op nummer [select]</text>
+<text x="65" y="290" font-family="Arial, sans-serif" font-size="14" fill="#222">151 Pokémon gevonden</text>
+<rect x="65" y="315" width="180" height="210" fill="#fafafa" stroke="#888"/>
+<rect x="110" y="330" width="90" height="80" fill="#eeeeee" stroke="#888"/>
+<text x="122" y="352" font-family="Arial, sans-serif" font-size="14" fill="#222">Afbeelding</text>
+<path d="M110 330l90 80m0 -80l-90 80" stroke="#aaa" fill="none"/>
+<text x="83" y="440" font-family="Arial, sans-serif" font-size="14" fill="#222">#1 Bulbasaur</text>
+<text x="83" y="466" font-family="Arial, sans-serif" font-size="14" fill="#222">Bekijk details</text>
+<rect x="77" y="481" width="156" height="30" fill="#ffffff" stroke="#888"/>
+<text x="89" y="503" font-family="Arial, sans-serif" font-size="14" fill="#222">Maak favoriet</text>
+<rect x="305" y="315" width="180" height="210" fill="#fafafa" stroke="#888"/>
+<rect x="350" y="330" width="90" height="80" fill="#eeeeee" stroke="#888"/>
+<text x="362" y="352" font-family="Arial, sans-serif" font-size="14" fill="#222">Afbeelding</text>
+<path d="M350 330l90 80m0 -80l-90 80" stroke="#aaa" fill="none"/>
+<text x="323" y="440" font-family="Arial, sans-serif" font-size="14" fill="#222">#4 Charmander</text>
+<text x="323" y="466" font-family="Arial, sans-serif" font-size="14" fill="#222">Bekijk details</text>
+<rect x="317" y="481" width="156" height="30" fill="#ffffff" stroke="#888"/>
+<text x="329" y="503" font-family="Arial, sans-serif" font-size="14" fill="#222">Maak favoriet</text>
+<rect x="545" y="315" width="180" height="210" fill="#fafafa" stroke="#888"/>
+<rect x="590" y="330" width="90" height="80" fill="#eeeeee" stroke="#888"/>
+<text x="602" y="352" font-family="Arial, sans-serif" font-size="14" fill="#222">Afbeelding</text>
+<path d="M590 330l90 80m0 -80l-90 80" stroke="#aaa" fill="none"/>
+<text x="563" y="440" font-family="Arial, sans-serif" font-size="14" fill="#222">#7 Squirtle</text>
+<text x="563" y="466" font-family="Arial, sans-serif" font-size="14" fill="#222">Bekijk details</text>
+<rect x="557" y="481" width="156" height="30" fill="#ffffff" stroke="#888"/>
+<text x="569" y="503" font-family="Arial, sans-serif" font-size="14" fill="#222">Maak favoriet</text>
+<rect x="785" y="315" width="180" height="210" fill="#fafafa" stroke="#888"/>
+<rect x="830" y="330" width="90" height="80" fill="#eeeeee" stroke="#888"/>
+<text x="842" y="352" font-family="Arial, sans-serif" font-size="14" fill="#222">Afbeelding</text>
+<path d="M830 330l90 80m0 -80l-90 80" stroke="#aaa" fill="none"/>
+<text x="803" y="440" font-family="Arial, sans-serif" font-size="14" fill="#222">#25 Pikachu</text>
+<text x="803" y="466" font-family="Arial, sans-serif" font-size="14" fill="#222">Bekijk details</text>
+<rect x="797" y="481" width="156" height="30" fill="#ffffff" stroke="#888"/>
+<text x="809" y="503" font-family="Arial, sans-serif" font-size="14" fill="#222">Maak favoriet</text>
+<text x="65" y="570" font-family="Arial, sans-serif" font-size="14" fill="#222">PokemonCard hergebruikt in lijst en favorieten. Raster loopt door naar beneden.</text>
+<text x="65" y="600" font-family="Arial, sans-serif" font-size="14" fill="#222">Zoeken + typefilter + sortering. Details opent /detail/:id; favorietknop wisselt status.</text>
+<text x="65" y="630" font-family="Arial, sans-serif" font-size="14" fill="#222">Toestanden: Pokémon laden / fout bij ophalen / 0 Pokémon gevonden.</text>
+</svg>

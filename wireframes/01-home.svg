@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="780" viewBox="0 0 1100 780">
+<rect width="1100" height="780" fill="white"/>
+<text x="30" y="30" font-family="Arial, sans-serif" font-size="18" fill="#222">01 Home | /</text>
+<rect x="30" y="48" width="1040" height="60" fill="#dddddd" stroke="#888"/>
+<text x="42" y="70" font-family="Arial, sans-serif" font-size="14" fill="#222">Pokémon Team Manager [Header]</text>
+<rect x="30" y="108" width="1040" height="44" fill="#eeeeee" stroke="#888"/>
+<text x="42" y="130" font-family="Arial, sans-serif" font-size="14" fill="#222">Home     Pokémon lijst     Detail     Favorieten     Teams [Navigation]</text>
+<rect x="30" y="690" width="1040" height="42" fill="#eeeeee" stroke="#888"/>
+<text x="42" y="712" font-family="Arial, sans-serif" font-size="14" fill="#222">Pokémon Team Manager - Data van de PokéAPI [Footer]</text>
+<text x="30" y="760" font-family="Arial, sans-serif" font-size="11" fill="#222">Low-fidelity revisie op basis van huidige applicatie - 30 oktober 2026</text>
+<text x="65" y="205" font-family="Arial, sans-serif" font-size="24" fill="#222">Welkom bij de Pokémon Team Manager</text>
+<text x="65" y="245" font-family="Arial, sans-serif" font-size="14" fill="#222">Met deze app stel je je eigen Pokémon teams samen.</text>
+<text x="75" y="290" font-family="Arial, sans-serif" font-size="14" fill="#222">1. Bekijk alle Pokémon in de lijst.</text>
+<text x="75" y="322" font-family="Arial, sans-serif" font-size="14" fill="#222">2. Zet je favoriete Pokémon bij je favorieten.</text>
+<text x="75" y="354" font-family="Arial, sans-serif" font-size="14" fill="#222">3. Maak een team en voeg favorieten toe (maximaal 6).</text>
+<rect x="65" y="405" width="250" height="42" fill="#ffffff" stroke="#888"/>
+<text x="77" y="427" font-family="Arial, sans-serif" font-size="14" fill="#222">Naar de Pokémon lijst</text>
+<text x="65" y="490" font-family="Arial, sans-serif" font-size="14" fill="#222">Actie: knop opent /list. Menu blijft op elke pagina zichtbaar.</text>
+</svg>
