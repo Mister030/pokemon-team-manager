@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+
 function PokemonCard({ id, name, image, isFavoriet, onToggleFavoriet }) {
   return (
     <div className="card">

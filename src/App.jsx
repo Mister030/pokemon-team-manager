@@ -11,9 +11,11 @@ import Teams from './pages/Teams.jsx'
 
 function App() {
   const [favorieten, setFavorieten] = useState(JSON.parse(localStorage.getItem('favorieten')) ?? [])
+
   useEffect(() => {
     localStorage.setItem('favorieten', JSON.stringify(favorieten))
   }, [favorieten])
+
   function toggleFavoriet(pokemon) {
     const isAlFavoriet = favorieten.some((f) => f.id === pokemon.id)
 

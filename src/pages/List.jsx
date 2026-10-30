@@ -17,6 +17,7 @@ function List({ favorieten, onToggleFavoriet }) {
   const [type, setType] = useState('')
   const [namenVanType, setNamenVanType] = useState([])
   const [sortering, setSortering] = useState('nummer')
+
   useEffect(() => {
     fetch(`${API_URL}/pokemon?limit=151`)
       .then((response) => response.json())
@@ -36,6 +37,7 @@ function List({ favorieten, onToggleFavoriet }) {
         setLaden(false)
       })
   }, [])
+
   function kiesType(nieuwType) {
     setType(nieuwType)
     setNamenVanType([])
@@ -48,10 +50,13 @@ function List({ favorieten, onToggleFavoriet }) {
         setNamenVanType(data.pokemon.map((p) => p.pokemon.name))
       })
   }
+
   let zichtbaar = pokemons.filter((p) => p.name.includes(zoekterm.toLowerCase()))
+
   if (type !== '') {
     zichtbaar = zichtbaar.filter((p) => namenVanType.includes(p.name))
   }
+
   if (sortering === 'az') {
     zichtbaar.sort((a, b) => a.name.localeCompare(b.name))
   } else if (sortering === 'za') {

@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+
 const MAX_POKEMON = 6
 
 function Teams({ favorieten }) {
   const [teams, setTeams] = useState(JSON.parse(localStorage.getItem('teams')) ?? [])
   const [nieuweNaam, setNieuweNaam] = useState('')
+
   useEffect(() => {
     localStorage.setItem('teams', JSON.stringify(teams))
   }, [teams])
+
   function maakTeam(event) {
     event.preventDefault()
     if (nieuweNaam.trim() === '') return
@@ -16,12 +19,15 @@ function Teams({ favorieten }) {
     setTeams([...teams, nieuwTeam])
     setNieuweNaam('')
   }
+
   function hernoemTeam(teamId, naam) {
     setTeams(teams.map((team) => (team.id === teamId ? { ...team, naam: naam } : team)))
   }
+
   function verwijderTeam(teamId) {
     setTeams(teams.filter((team) => team.id !== teamId))
   }
+
   function voegPokemonToe(teamId, pokemonId) {
     const team = teams.find((t) => t.id === teamId)
     const pokemon = favorieten.find((f) => f.id === Number(pokemonId))
@@ -40,6 +46,7 @@ function Teams({ favorieten }) {
       teams.map((t) => (t.id === teamId ? { ...t, pokemon: [...t.pokemon, pokemon] } : t)),
     )
   }
+
   function verwijderPokemon(teamId, pokemonId) {
     setTeams(
       teams.map((t) =>

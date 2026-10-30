@@ -6,6 +6,7 @@ function Detail({ favorieten, onToggleFavoriet }) {
 
   const [pokemon, setPokemon] = useState(null)
   const [fout, setFout] = useState(false)
+
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
       .then((response) => {
