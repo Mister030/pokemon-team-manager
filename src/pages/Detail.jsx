@@ -8,10 +8,14 @@ function Detail({ favorieten, onToggleFavoriet }) {
   const [fout, setFout] = useState(false)
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) throw new Error('Niet gevonden')
+        return response.json()
+      })
       .then((data) => {
         console.log(data)
         setPokemon(data)
+        setFout(false)
       })
       .catch(() => setFout(true))
   }, [id])
