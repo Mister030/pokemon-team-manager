@@ -24,6 +24,12 @@ function Teams({ favorieten }) {
     setTeams(teams.map((team) => (team.id === teamId ? { ...team, naam: naam } : team)))
   }
 
+  function controleerNaam(team) {
+    if (team.naam.trim() === '') {
+      hernoemTeam(team.id, 'Team zonder naam')
+    }
+  }
+
   function verwijderTeam(teamId) {
     setTeams(teams.filter((team) => team.id !== teamId))
   }
@@ -88,6 +94,7 @@ function Teams({ favorieten }) {
               aria-label="Teamnaam"
               value={team.naam}
               onChange={(e) => hernoemTeam(team.id, e.target.value)}
+              onBlur={() => controleerNaam(team)}
             />
 
             <p>
