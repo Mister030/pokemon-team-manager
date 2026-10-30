@@ -3,6 +3,8 @@
 Schoolproject Frontend leerjaar 2, periode 1. Een React-app waarin je Pokémon bekijkt, favorieten bijhoudt en teams maakt.
 De data komt uit de [PokéAPI](https://pokeapi.co/).
 
+**Live website:** https://mister030.github.io/pokemon-team-manager/
+
 ## Starten
 
 ```bash
@@ -50,7 +52,8 @@ src/
 | 6 | Favorieten | `App.jsx`, `Favorieten.jsx` | `useState` in `App`, doorgeven via props |
 | 7 | Teams (CRUD) | `Teams.jsx` | Create, read, update (hernoemen, Pokémon toevoegen/verwijderen) en delete |
 | 8 | Filteren, sorteren, max. 6 | `List.jsx`, `Favorieten.jsx`, `Teams.jsx` | `.filter()`, `.sort()`, en een check op `MAX_POKEMON` |
-| 9 | Extra: opslaan | `App.jsx`, `Teams.jsx` | `localStorage` + `useEffect`, blijft bewaard na verversen |
+| 9 | Extra: opslaan | `App.jsx`, `Teams.jsx`, `opslag.js` | `localStorage` + `useEffect`, blijft bewaard na verversen |
+| 6.0 | Deployment | `vite.config.js`, `.github/workflows/deploy.yml` | `npm run build` en GitHub Pages |
 
 ## Belangrijke begrippen
 
@@ -60,6 +63,16 @@ src/
 - **`useEffect`**: code die na het tekenen draait, bijvoorbeeld data ophalen. De lijst `[]` achteraan bepaalt wanneer het opnieuw draait.
 - **`useParams`**: leest een stukje uit de url, zoals het `:id` in `/detail/:id`.
 - **Nooit state direct aanpassen**: altijd een nieuwe array maken, met `[...lijst, nieuw]`, `.filter()` of `.map()`.
+
+## Deployment
+
+De app staat online via GitHub Pages: https://mister030.github.io/pokemon-team-manager/
+
+1. `npm run build` maakt de map `dist/` met de kant-en-klare website.
+2. In `vite.config.js` staat `base: '/pokemon-team-manager/'`, omdat de site in die submap van GitHub Pages staat.
+3. `BrowserRouter` in `main.jsx` krijgt dezelfde basis via `basename`.
+4. Bij elke push naar `main` bouwt de workflow `.github/workflows/deploy.yml` de app en zet hem online.
+5. `404.html` is een kopie van `index.html`, zodat verversen op bijvoorbeeld `/teams` ook werkt.
 
 ## Wireframes
 
