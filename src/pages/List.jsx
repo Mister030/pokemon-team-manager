@@ -16,6 +16,7 @@ function List({ favorieten, onToggleFavoriet }) {
   const [zoekterm, setZoekterm] = useState('')
   const [type, setType] = useState('')
   const [namenVanType, setNamenVanType] = useState([])
+  const [typeFout, setTypeFout] = useState(false)
   const [sortering, setSortering] = useState('nummer')
 
   useEffect(() => {
@@ -41,6 +42,7 @@ function List({ favorieten, onToggleFavoriet }) {
   function kiesType(nieuwType) {
     setType(nieuwType)
     setNamenVanType([])
+    setTypeFout(false)
 
     if (nieuwType === '') return
 
@@ -49,6 +51,7 @@ function List({ favorieten, onToggleFavoriet }) {
       .then((data) => {
         setNamenVanType(data.pokemon.map((p) => p.pokemon.name))
       })
+      .catch(() => setTypeFout(true))
   }
 
   let zichtbaar = pokemons.filter((p) => p.name.includes(zoekterm.toLowerCase()))
@@ -93,6 +96,8 @@ function List({ favorieten, onToggleFavoriet }) {
           <option value="za">Naam Z-A</option>
         </select>
       </div>
+
+      {typeFout && <p>Dit type kon niet geladen worden. Probeer het opnieuw.</p>}
 
       <p>{zichtbaar.length} Pokémon gevonden</p>
 
