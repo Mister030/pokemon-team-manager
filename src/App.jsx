@@ -8,12 +8,13 @@ import List from './pages/List.jsx'
 import Detail from './pages/Detail.jsx'
 import Favorieten from './pages/Favorieten.jsx'
 import Teams from './pages/Teams.jsx'
+import { laad, bewaar } from './opslag.js'
 
 function App() {
-  const [favorieten, setFavorieten] = useState(JSON.parse(localStorage.getItem('favorieten')) ?? [])
+  const [favorieten, setFavorieten] = useState(() => laad('favorieten'))
 
   useEffect(() => {
-    localStorage.setItem('favorieten', JSON.stringify(favorieten))
+    bewaar('favorieten', favorieten)
   }, [favorieten])
 
   function toggleFavoriet(pokemon) {

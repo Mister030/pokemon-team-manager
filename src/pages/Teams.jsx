@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { laad, bewaar } from '../opslag.js'
 
 const MAX_POKEMON = 6
 
 function Teams({ favorieten }) {
-  const [teams, setTeams] = useState(JSON.parse(localStorage.getItem('teams')) ?? [])
+  const [teams, setTeams] = useState(() => laad('teams'))
   const [nieuweNaam, setNieuweNaam] = useState('')
 
   useEffect(() => {
-    localStorage.setItem('teams', JSON.stringify(teams))
+    bewaar('teams', teams)
   }, [teams])
 
   function maakTeam(event) {
