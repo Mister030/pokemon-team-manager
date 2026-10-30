@@ -1,7 +1,13 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import PokemonCard from '../components/PokemonCard.jsx'
 
 function Favorieten({ favorieten, onToggleFavoriet }) {
+  const [zoekterm, setZoekterm] = useState('')
+
+  // Zoeken op naam in je favorieten, zo vind je snel een Pokémon voor je team
+  const zichtbaar = favorieten.filter((p) => p.name.includes(zoekterm.toLowerCase()))
+
   return (
     <section>
       <h1>Favorieten</h1>
@@ -12,18 +18,33 @@ function Favorieten({ favorieten, onToggleFavoriet }) {
           op &quot;Maak favoriet&quot;.
         </p>
       ) : (
-        <div className="grid">
-          {favorieten.map((pokemon) => (
-            <PokemonCard
-              key={pokemon.id}
-              id={pokemon.id}
-              name={pokemon.name}
-              image={pokemon.image}
-              isFavoriet={true}
-              onToggleFavoriet={onToggleFavoriet}
+        <>
+          <div className="filters">
+            <input
+              type="text"
+              placeholder="Zoek in je favorieten"
+              value={zoekterm}
+              onChange={(e) => setZoekterm(e.target.value)}
             />
-          ))}
-        </div>
+          </div>
+
+          <p>
+            {zichtbaar.length} van {favorieten.length} favorieten
+          </p>
+
+          <div className="grid">
+            {zichtbaar.map((pokemon) => (
+              <PokemonCard
+                key={pokemon.id}
+                id={pokemon.id}
+                name={pokemon.name}
+                image={pokemon.image}
+                isFavoriet={true}
+                onToggleFavoriet={onToggleFavoriet}
+              />
+            ))}
+          </div>
+        </>
       )}
     </section>
   )
